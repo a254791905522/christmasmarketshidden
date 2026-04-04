@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Market Hidden Object | Festive Hidden-Object Puzzle</title>
+    <meta name="description" content="Christmas Market Hidden Object — search festive scenes, find hidden objects before time runs out, earn stars, and enjoy a cozy holiday adventure on iPhone and iPad.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #0d1814;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            overflow-x: hidden;
+            color: #e8e0d5;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 120% 80% at 50% -20%, rgba(196, 30, 58, 0.18) 0%, transparent 55%),
+                radial-gradient(ellipse 90% 60% at 100% 50%, rgba(26, 95, 63, 0.35) 0%, transparent 50%),
+                radial-gradient(ellipse 80% 50% at 0% 80%, rgba(212, 168, 75, 0.08) 0%, transparent 45%),
+                linear-gradient(180deg, #0f2218 0%, #0d1814 40%, #121a16 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(1.5px 1.5px at 12% 18%, rgba(255, 255, 255, 0.45) 0%, transparent 100%),
+                radial-gradient(1px 1px at 35% 42%, rgba(255, 255, 255, 0.35) 0%, transparent 100%),
+                radial-gradient(1.2px 1.2px at 72% 22%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 88% 65%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+                radial-gradient(1.4px 1.4px at 50% 88%, rgba(255, 255, 255, 0.38) 0%, transparent 100%);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+            animation: snowDrift 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes snowDrift {
+            from { transform: translateY(0); opacity: 0.28; }
+            to { transform: translateY(6px); opacity: 0.4; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            width: 100%;
+            padding: 48px 42px;
+            text-align: center;
+            background: linear-gradient(165deg, rgba(18, 42, 32, 0.94) 0%, rgba(12, 28, 22, 0.96) 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(212, 168, 75, 0.25);
+            box-shadow:
+                0 28px 80px rgba(0, 0, 0, 0.55),
+                inset 0 1px 0 rgba(255, 248, 235, 0.06),
+                0 0 60px rgba(196, 30, 58, 0.06);
+        }
+
+        .ribbon {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #1a5f3f;
+            background: linear-gradient(90deg, #d4a84b, #f0d78c, #d4a84b);
+            padding: 8px 20px;
+            border-radius: 4px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
+
+        .app-icon {
+            width: 124px;
+            height: 124px;
+            margin: 0 auto 26px;
+            border-radius: 28px;
+            background: linear-gradient(145deg, #1a5f3f 0%, #0d3d2a 45%, #8b1538 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 56px;
+            border: 2px solid rgba(212, 168, 75, 0.45);
+            box-shadow:
+                0 16px 40px rgba(0, 0, 0, 0.4),
+                inset 0 2px 12px rgba(255, 255, 255, 0.12);
+            transition: transform 0.35s ease;
+        }
+
+        .app-icon:hover {
+            transform: scale(1.06) rotate(-2deg);
+        }
+
+        h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 2.35rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #fdf6e8;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 24px rgba(196, 30, 58, 0.25);
+        }
+
+        .subtitle {
+            color: #c41e3a;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .tagline {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.12rem;
+            color: #d4a84b;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+
+        .description {
+            text-align: left;
+            line-height: 1.85;
+            font-size: 1.02rem;
+            color: #c9bfb0;
+            margin-bottom: 28px;
+        }
+
+        .description p + p {
+            margin-top: 14px;
+        }
+
+        .how-to-play {
+            text-align: left;
+            margin-bottom: 28px;
+            padding: 24px 26px;
+            background: rgba(26, 95, 63, 0.2);
+            border-radius: 16px;
+            border-left: 4px solid #c41e3a;
+        }
+
+        .how-to-play h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            color: #f0d78c;
+            font-size: 1.15rem;
+            margin-bottom: 14px;
+        }
+
+        .how-to-play ol {
+            padding-left: 22px;
+            color: #b8a99a;
+        }
+
+        .how-to-play li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .how-to-play li::marker {
+            color: #d4a84b;
+            font-weight: 700;
+        }
+
+        .features {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .features h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            color: #f0d78c;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .features ul {
+            list-style: none;
+        }
+
+        .features li {
+            color: #c9bfb0;
+            padding: 12px 0 12px 36px;
+            position: relative;
+            line-height: 1.55;
+            border-bottom: 1px solid rgba(212, 168, 75, 0.08);
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features li::before {
+            position: absolute;
+            left: 0;
+            color: #c41e3a;
+            font-weight: 700;
+            content: "✦";
+            font-size: 0.85rem;
+            top: 14px;
+        }
+
+        .app-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .info-item {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(212, 168, 75, 0.12);
+            border-radius: 12px;
+            padding: 14px 16px;
+        }
+
+        .info-item .label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #7a9a86;
+            font-weight: 600;
+        }
+
+        .info-item .value {
+            color: #e8e0d5;
+            font-weight: 600;
+            margin-top: 4px;
+            font-size: 0.95rem;
+        }
+
+        .app-store-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b1538 50%, #1a5f3f 100%);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 1.08rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            box-shadow: 0 12px 36px rgba(139, 21, 56, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(240, 215, 140, 0.25);
+        }
+
+        .app-store-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 44px rgba(196, 30, 58, 0.45);
+            color: #fff;
+        }
+
+        .footer {
+            margin-top: 32px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(212, 168, 75, 0.12);
+            font-size: 0.88rem;
+            color: #6d7f72;
+        }
+
+        .footer a {
+            color: #d4a84b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+            color: #f0d78c;
+        }
+
+        .footer p {
+            margin: 6px 0;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 32px 22px;
+            }
+
+            h1 {
+                font-size: 1.85rem;
+            }
+
+            .app-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 46px;
+            }
+
+            .app-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="ribbon">Holiday puzzle</span>
+        <div class="app-icon" aria-hidden="true">🎄</div>
+        <h1>Christmas Market Hidden Object</h1>
+        <p class="subtitle">Find Hidden Objects Fast</p>
+        <p class="tagline">A cozy Christmas adventure in every scene</p>
+
+        <div class="description">
+            <p>Step into a magical holiday world filled with festive market stalls, twinkling lights, and cleverly tucked-away items. <strong>Christmas Market Hidden Object</strong> challenges your observation skills as you hunt for listed objects before the timer runs out.</p>
+            <p>Explore richly detailed Christmas environments, unlock new levels, earn stars for speed and accuracy, and enjoy a smooth, relaxing pace—easy to pick up, satisfying to master. Compete on Game Center leaderboards and see how sharp your eye really is.</p>
+        </div>
+
+        <div class="how-to-play">
+            <h3>How to play</h3>
+            <ol>
+                <li>Open a level and read the objects you need to find.</li>
+                <li>Scan the festive scene and tap each hidden item when you spot it.</li>
+                <li>Beat the clock to finish the level and collect stars.</li>
+                <li>Progress through unique holiday-themed scenes and aim for a perfect run.</li>
+            </ol>
+        </div>
+
+        <div class="features">
+            <h3>What you will love</h3>
+            <ul>
+                <li>Classic hidden-object gameplay tuned for quick, joyful sessions</li>
+                <li>Time-based levels that add excitement without stress</li>
+                <li>Star rewards for completing stages faster</li>
+                <li>Multiple unique, festive scenes packed with holiday detail</li>
+                <li>Intuitive controls and polished, cozy presentation</li>
+                <li>Game Center support with leaderboards</li>
+                <li>Optional in-app purchases: remove ads and hint packs</li>
+            </ul>
+        </div>
+
+        <div class="app-info">
+            <div class="info-item">
+                <div class="label">Category</div>
+                <div class="value">Puzzle</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Price</div>
+                <div class="value">Free (IAP)</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Size</div>
+                <div class="value">~635 MB</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Requires</div>
+                <div class="value">iOS / iPadOS 15.0+</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Age rating</div>
+                <div class="value">4+</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Language</div>
+                <div class="value">English</div>
+            </div>
+        </div>
+
+        <a href="https://apps.apple.com/us/app/christmas-market-hidden-object/id1065196359?uo=4" class="app-store-button" target="_blank" rel="noopener noreferrer">
+            Download on the App Store
+        </a>
+
+        <div class="footer">
+            <p><a href="privacy.html">Privacy Policy</a></p>
+            <p>Developer: <a href="https://litzin.com/" target="_blank" rel="noopener noreferrer">Dipak Keshariya — litzin.com</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

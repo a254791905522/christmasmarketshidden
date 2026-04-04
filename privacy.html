@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Christmas Market Hidden Object</title>
+    <meta name="description" content="Privacy Policy for Christmas Market Hidden Object — how the game handles data, ads, Game Center, in-app purchases, and your rights.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #0d1814;
+            color: #c9bfb0;
+            line-height: 1.75;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 100% 70% at 50% 0%, rgba(196, 30, 58, 0.12) 0%, transparent 50%),
+                linear-gradient(180deg, #0f2218 0%, #0d1814 50%, #101812 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .wrap {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        nav.pill-nav {
+            margin-bottom: 20px;
+        }
+
+        nav.pill-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(26, 95, 63, 0.35);
+            border: 1px solid rgba(212, 168, 75, 0.2);
+            color: #f0d78c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        nav.pill-nav a:hover {
+            background: rgba(26, 95, 63, 0.55);
+            border-color: rgba(212, 168, 75, 0.4);
+        }
+
+        .doc {
+            background: linear-gradient(180deg, rgba(18, 42, 32, 0.95) 0%, rgba(10, 24, 18, 0.98) 100%);
+            border: 1px solid rgba(212, 168, 75, 0.22);
+            border-radius: 20px;
+            padding: 40px 36px 48px;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+        }
+
+        .doc-header {
+            text-align: center;
+            padding-bottom: 28px;
+            margin-bottom: 28px;
+            border-bottom: 1px dashed rgba(212, 168, 75, 0.25);
+        }
+
+        .doc-header .mark {
+            font-size: 2.5rem;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .doc-header h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.85rem;
+            color: #fdf6e8;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .doc-header .app-name {
+            color: #d4a84b;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .doc-header .meta {
+            margin-top: 14px;
+            font-size: 0.82rem;
+            color: #7a9a86;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+
+        .lead {
+            font-size: 1.05rem;
+            color: #e8e0d5;
+            margin-bottom: 32px;
+            padding: 20px 22px;
+            background: rgba(196, 30, 58, 0.12);
+            border-radius: 12px;
+            border: 1px solid rgba(196, 30, 58, 0.2);
+        }
+
+        article.block {
+            margin-bottom: 28px;
+        }
+
+        article.block h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.2rem;
+            color: #f0d78c;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        article.block h2 .num {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #0d1814;
+            background: #d4a84b;
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        article.block p {
+            margin-bottom: 12px;
+        }
+
+        article.block p:last-child {
+            margin-bottom: 0;
+        }
+
+        dl.facts {
+            margin-top: 12px;
+        }
+
+        dl.facts dt {
+            font-weight: 700;
+            color: #d4a84b;
+            font-size: 0.88rem;
+            margin-top: 14px;
+        }
+
+        dl.facts dt:first-child {
+            margin-top: 0;
+        }
+
+        dl.facts dd {
+            margin-left: 0;
+            color: #a89e90;
+            font-size: 0.95rem;
+        }
+
+        ul.tree {
+            list-style: none;
+            margin: 12px 0 0;
+        }
+
+        ul.tree li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            border-left: 2px solid rgba(26, 95, 63, 0.6);
+            margin-left: 8px;
+        }
+
+        ul.tree li::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background: #1a5f3f;
+            border: 2px solid #d4a84b;
+            border-radius: 50%;
+        }
+
+        .fine-print {
+            font-size: 0.88rem;
+            color: #8a8075;
+            margin-top: 8px;
+        }
+
+        .closing {
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(212, 168, 75, 0.15);
+            text-align: center;
+        }
+
+        .closing a.cta {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 14px 32px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #c41e3a, #1a5f3f);
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid rgba(240, 215, 140, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .closing a.cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(139, 21, 56, 0.35);
+            color: #fff;
+        }
+
+        .closing .links {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .closing .links a {
+            color: #d4a84b;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .closing .links a:hover {
+            text-decoration: underline;
+            color: #f0d78c;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 0.8rem;
+            color: #4d5c52;
+        }
+
+        a.inline {
+            color: #d4a84b;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        a.inline:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 520px) {
+            .doc {
+                padding: 28px 20px 36px;
+            }
+
+            .doc-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <nav class="pill-nav" aria-label="Site">
+            <a href="index.html">← Christmas Market Hidden Object</a>
+        </nav>
+
+        <div class="doc">
+            <header class="doc-header">
+                <div class="mark" aria-hidden="true">📜</div>
+                <h1>Privacy Policy</h1>
+                <p class="app-name">Christmas Market Hidden Object</p>
+                <p class="meta">Last updated · April 4, 2026</p>
+            </header>
+
+            <p class="lead">
+                This notice explains how <strong>Christmas Market Hidden Object</strong> (“the App”) treats information when you play on iPhone, iPad, or compatible Apple devices. The App is published by <strong>Dipak Keshariya</strong>. If anything here conflicts with labels shown on the App Store product page, the App Store disclosure should be treated as the source Apple relies on for that listing.
+            </p>
+
+            <article class="block">
+                <h2><span class="num">1</span> Scope</h2>
+                <p>This policy covers gameplay, optional in-app purchases, advertising shown in the free experience, and Apple platform features you may enable (such as Game Center). It does not govern other websites or services unless we link to them explicitly.</p>
+            </article>
+
+            <article class="block">
+                <h2><span class="num">2</span> Information the developer does not collect</h2>
+                <p>According to the App Store privacy details provided for this App, the developer does not collect data from the App for tracking or analytics in the way some apps do. We do not ask you to create an account inside the App, and we do not run our own server-side profile of your identity for gameplay.</p>
+                <p class="fine-print">Apple’s “App Privacy” section may change over time; please review the listing for the latest summary.</p>
+            </article>
+
+            <article class="block">
+                <h2><span class="num">3</span> Advertising</h2>
+                <p>The App may display advertisements. Ad networks and their partners may use identifiers or technical signals permitted by Apple to measure delivery or frequency caps. Those practices are governed by the ad provider’s policies and by Apple’s privacy controls (for example, limiting ad tracking in system settings). We do not control third-party ad technology beyond choosing to show ads in the free version.</p>
+                <p>You may use an in-app purchase to remove ads where offered; pricing and availability appear on the App Store.</p>
+            </article>
+
+            <article class="block">
+                <h2><span class="num">4</span> Apple App Store, Game Center, and purchases</h2>
+                <dl class="facts">
+                    <dt>Downloads &amp; receipts</dt>
+                    <dd>Apple processes app downloads, refunds, and purchase receipts. Apple’s privacy policy applies to that relationship.</dd>
+                    <dt>In-app purchases</dt>
+                    <dd>Optional purchases (for example, removing ads or hint packs) are fulfilled through Apple’s payment system. We do not receive your full payment card details.</dd>
+                    <dt>Game Center</dt>
+                    <dd>If you sign in to Game Center, Apple may associate gameplay features such as leaderboards with your Game Center identity according to Apple’s terms and settings.</dd>
+                </dl>
+            </article>
+
+            <article class="block">
+                <h2><span class="num">5</span> Data stored on your device</h2>
+                <p>Progress, preferences, and similar gameplay state may be kept locally on your device. Uninstalling the App typically removes that local data unless Apple’s systems retain backups according to your device settings.</p>
+            </article>
+
+            <article class="block">
+                <h2><span class="num">6</span> Children</h2>
+                <p>The App is rated 4+. We encourage parents and guardians to use Apple’s Screen Time and privacy controls. If you believe a child has shared personal information with us directly (for example, through a support email), contact us using the details below and we will take reasonable steps to respond.</p>
+            </article>
+
+            <article class="block">
+                <h2><span class="num">7</span> International players</h2>
+                <p>Because distribution is worldwide through the App Store, your use may involve processing on Apple’s infrastructure or by service providers in various regions. By using the App, you acknowledge that applicable laws where you live may also apply.</p>
+            </article>
+
+            <article class="block">
+                <h2><span class="num">8</span> Changes to this policy</h2>
+                <p>We may update this page when the App, platform rules, or legal requirements change. The “Last updated” date at the top will be revised when we publish a new version. Continued use of the App after an update means you accept the revised notice, except where applicable law requires additional steps.</p>
+            </article>
+
+            <article class="block">
+                <h2><span class="num">9</span> Contact</h2>
+                <p>For privacy questions about this App, you may reach the developer through the official site or the support channels listed on the App Store.</p>
+                <ul class="tree">
+                    <li>Website: <a class="inline" href="https://litzin.com/" target="_blank" rel="noopener noreferrer">litzin.com</a></li>
+                    <li>App Store listing: <a class="inline" href="https://apps.apple.com/us/app/christmas-market-hidden-object/id1065196359?uo=4" target="_blank" rel="noopener noreferrer">Christmas Market Hidden Object</a></li>
+                </ul>
+            </article>
+
+            <div class="closing">
+                <p>Thank you for playing. We hope you enjoy the holiday scenes and the hunt for every last hidden object.</p>
+                <a class="cta" href="https://apps.apple.com/us/app/christmas-market-hidden-object/id1065196359?uo=4" target="_blank" rel="noopener noreferrer">View on the App Store</a>
+                <p class="links"><a href="index.html">Game overview</a></p>
+            </div>
+
+            <p class="copyright">&copy; 2026 Dipak Keshariya. Christmas Market Hidden Object.</p>
+        </div>
+    </div>
+</body>
+
+</html>
